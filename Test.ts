@@ -24,8 +24,10 @@ let count = 0;
 
     // 로그인
     await page.evaluate((id, pw) => {
-        document.querySelector('input[type="text"]').value = id;
-        document.querySelector('input[type="password"]').value = pw;
+        const text = document.querySelector('input[type="text"]') as HTMLInputElement;
+        text.value = id;
+        const password = document.querySelector('input[type="text"]') as HTMLInputElement;
+        password.value = pw;
     }, loginId, loginPass);
 
     // 로그인 버튼 클릭
@@ -37,7 +39,7 @@ let count = 0;
     await browser.close();
 })();
 
-function path(fileName) {
+function path(fileName: string) {
     let numStr = (++count).toString().padStart(3, "0");
     return './test-result/' + numStr + "-" + fileName + '.png';
 }

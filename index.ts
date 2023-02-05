@@ -8,7 +8,7 @@ async function run() {
 
   // evaluate를 사용하여 innerText 가져오기
   const courses1 = await page.evaluate(() =>
-    Array.from(document.querySelectorAll('#courses .card'), (e) => ({
+    Array.from(document.querySelectorAll('#courses .card'), (e: any) => ({
       title: e.querySelector('.card-body h3').innerText,
       level: e.querySelector('.card-body .level').innerText,
       url: e.querySelector('.card-footer a').href,
@@ -18,7 +18,7 @@ async function run() {
 
   // $$eval을 사용하여 innerText 가져오기
   const courses2 = await page.$$eval('#courses .card', (elements) =>
-    elements.map((e) => ({
+    elements.map((e: any) => ({
       title: e.querySelector('.card-body h3').innerText,
       level: e.querySelector('.card-body .level').innerText,
       url: e.querySelector('.card-footer a').href,
