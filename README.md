@@ -17,4 +17,4 @@ $ npm install @types/node @types/puppeteer puppeteer ts-node typescript
 $ yarn add @types/node @types/puppeteer puppeteer ts-node typescript
 ```
 ## ⚙️ 사용법
-설정이 완료되었다면 각 `ts-node {파일명}.ts`라는 명령어를 작성하면 각 파일에 설정되어 있는 파일들이 실행된다.
+설정이 완료되었다면 각 `ts-node {파일명}.ts`라는 명령어를 실행시키면 각 파일에 설정되어 있는 파일들이 실행된다.
